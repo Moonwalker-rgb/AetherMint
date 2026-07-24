@@ -368,7 +368,9 @@ router.get("/categories", async (req: Request, res: Response) => {
   try {
     logger.info("Categories request");
 
-    const categories = await searchService.getCategories();      return res.status(200).json({
+    const categories = await searchService.getCategories();
+
+    return res.status(200).json({
       success: true,
       message: "Categories retrieved successfully",
       data: categories,
@@ -392,7 +394,9 @@ router.get("/categories/tree", async (req: Request, res: Response) => {
   try {
     logger.info("Category tree request");
 
-    const categories = await searchService.getCategoryTree();      return res.status(200).json({
+    const categories = await searchService.getCategoryTree();
+
+    return res.status(200).json({
       success: true,
       message: "Category tree retrieved successfully",
       data: categories,
@@ -652,7 +656,9 @@ router.get("/analytics/search/:query", async (req: Request, res: Response) => {
 
     logger.info(`Search analytics request - Query: ${query}`);
 
-    const analytics = await searchService.getSearchAnalytics(query);      return res.status(200).json({
+    const analytics = await searchService.getSearchAnalytics(query);
+
+    return res.status(200).json({
       success: true,
       message: "Search analytics retrieved successfully",
       data: analytics,
